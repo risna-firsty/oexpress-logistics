@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
 
-describe("[CORPORATE] Test login OExpress", () => {
+describe("[CORPORATE] Test onboarding OExpress", () => {
     beforeEach(() => {
       cy.viewport(1200, 800)
       cy.visit('https://sandbox-app.oexpress.co.id/');
       cy.clearLocalStorage();
-      cy.get('input[name="email"]').type('corptest11@yopmail.com');
-      cy.get('input[name="password"]').type('Akuntes1.');
+      cy.get('input[name="email"]').type('corptest51@yopmail.com'); // change with your own new fully set corporate account
+      cy.get('input[name="password"]').type('Akuntes1.'); // change with your own new fully set corporate account
       cy.get('.input-password__append').click();
       cy.get('input[name="password"]').should('have.value', 'Akuntes1.');
       cy.get('button[type="submit"]').click();
@@ -16,6 +16,11 @@ describe("[CORPORATE] Test login OExpress", () => {
       cy.get('.menuitem-create-order').should('contain', 'Buat Kiriman');
       cy.get('.account-position').should('contain', 'Corporate');
     });
+
+    afterEach(() => {
+      cy.wait(3000)
+      cy.screenshot()
+  })
 
     it("[OC001] - Access onboarding corporate account ", () => { 
         cy.get('.side-nav-item').should('contain', 'Dashboard');
@@ -42,7 +47,7 @@ describe("[CORPORATE] Test login OExpress", () => {
 
     it("[OC003] - Upload Surat Perjanjian", () => {
         // This case can only be done in a new Corporate account after the account is fully set. 
-        // So you need to change the credential with a new fullly set account of the login script in the beforeEach section
+        // So you need to change the credential with a new fullly set account of the login script in the beforeEach section of this file
 
         cy.get('button[class="btn btn-outline-alert-warning mb-2"]').contains('Upload Surat').click({force: true});
         cy.wait(1000);

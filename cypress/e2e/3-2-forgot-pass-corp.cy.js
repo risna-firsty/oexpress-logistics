@@ -1,13 +1,18 @@
 /// <reference types="cypress" />
 
-describe("[REGULAR] Test login OExpress", () => {
+describe("[CORPORATE] Test login OExpress", () => {
     beforeEach(() => {
       cy.viewport(1200, 800)
       cy.visit('https://sandbox-app.oexpress.co.id/password/reset', {failOnStatusCode: false})
       cy.clearLocalStorage();
     });
 
-    it("[FPC001] - Access regular account forgot password page", () => {
+    afterEach(() => {
+        cy.wait(3000)
+        cy.screenshot()
+    })
+
+    it("[FPC001] - Access corporate account forgot password page", () => {
         cy.get('.mt-0').should('contain', 'Reset Password');
     })
 

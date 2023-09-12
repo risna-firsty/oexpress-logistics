@@ -1,11 +1,15 @@
 /// <reference types="cypress" />
 
-describe("Test Registration Regular", () => {
+describe("[REGULAR] Test Registration", () => {
     beforeEach(() => {
       cy.viewport(1200, 800);
       cy.visit('https://sandbox-app.oexpress.co.id/register', {failOnStatusCode: false});
       cy.clearLocalStorage();
     });
+    afterEach(() => {
+        cy.wait(3000)
+        cy.screenshot()
+    })
 
     it("[RR001] - Access register regular page",() => {
         cy.get('.form-label').should('contain', 'Nama Lengkap');

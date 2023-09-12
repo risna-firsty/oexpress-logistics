@@ -7,6 +7,11 @@ describe("[REGULAR] Test login OExpress", () => {
       cy.clearLocalStorage();
     });
 
+    afterEach(() => {
+        cy.wait(3000)
+        cy.screenshot()
+    }) 
+
     it("[FPR001] - Access regular account forgot password page", () => {
         cy.get('.mt-0').should('contain', 'Reset Password');
     })

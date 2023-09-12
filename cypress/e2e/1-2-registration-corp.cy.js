@@ -1,11 +1,16 @@
 /// <reference types="cypress" />
 
-describe("Test Registration Corporate", () => {
+describe("[CORPORATE] Test Registration", () => {
     beforeEach(() => {
       cy.viewport(1200, 800)
       cy.visit('https://sandbox-app.oexpress.co.id/corp/register', {failOnStatusCode: false});
       cy.clearLocalStorage();
     });
+   
+    afterEach(() => {
+        cy.wait(3000)
+        cy.screenshot()
+    })
 
     it("[RC001] - Access register corporate page",() => {
         cy.get('.form-label').should('contain', 'Nama Perusahaan');

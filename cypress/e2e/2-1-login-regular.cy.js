@@ -7,6 +7,11 @@ describe("[REGULAR] Test login OExpress", () => {
       cy.clearLocalStorage();
     });
 
+    afterEach(() => {
+        cy.wait(3000)
+        cy.screenshot()
+    })
+
     it("[LR001] - Access regular account login page", () => {
         cy.get('.text-muted').should('contain', 'Belum memiliki akun?');
         cy.url().should('include', '/login');

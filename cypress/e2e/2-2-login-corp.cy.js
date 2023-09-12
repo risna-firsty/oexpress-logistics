@@ -1,11 +1,16 @@
 /// <reference types="cypress" />
 
-describe("[REGULAR] Test login OExpress", () => {
+describe("[CORPORATE] Test login OExpress", () => {
     beforeEach(() => {
       cy.viewport(1200, 800)
       cy.visit('https://sandbox-app.oexpress.co.id/', {failOnStatusCode: false});
       cy.clearLocalStorage();
     });
+
+    afterEach(() => {
+        cy.wait(3000)
+        cy.screenshot()
+    })
 
     it("[LC001] - Access regular account login page", () => {
         cy.get('.text-muted').should('contain', 'Belum memiliki akun?');

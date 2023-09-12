@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("[REGULAR] Test login OExpress", () => {
+describe("[REGULAR] Test onboarding OExpress", () => {
     beforeEach(() => {
       cy.viewport(1200, 800)
       cy.visit('https://sandbox-app.oexpress.co.id/')
@@ -12,6 +12,11 @@ describe("[REGULAR] Test login OExpress", () => {
       cy.get('button[type="submit"]').click()
       cy.wait(2000)
     });
+
+    afterEach(() => {
+      cy.wait(3000)
+      cy.screenshot()
+    })
 
     it("[OR001] - Access onboarding regular account", () => {
       cy.get('.side-nav-item').should('contain', 'Dashboard')

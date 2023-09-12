@@ -23,7 +23,7 @@ describe("[REGULAR] Test login OExpress", () => {
     })
 
     it("[FPC004] - With registered and valid email", () => {
-        cy.get('input[name="email"]').type('corp1@yopmail.com');
+        cy.get('input[name="email"]').type('corptest1@yopmail.com');
         cy.get('button[type="submit"]').click();
         cy.get('.alert-success').should('contain', 'Tolong cek email Anda!');
     })

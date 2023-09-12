@@ -6,7 +6,7 @@ describe("[CORPORATE] Test onboarding OExpress", () => {
       cy.viewport(1200, 800)
       cy.visit('https://sandbox-app.oexpress.co.id/');
       cy.clearLocalStorage();
-      cy.get('input[name="email"]').type('corptest51@yopmail.com'); // change with your own new fully set corporate account
+      cy.get('input[name="email"]').type('corptest621@yopmail.com'); // change with your own new fully set corporate account
       cy.get('input[name="password"]').type('Akuntes1.'); // change with your own new fully set corporate account
       cy.get('.input-password__append').click();
       cy.get('input[name="password"]').should('have.value', 'Akuntes1.');

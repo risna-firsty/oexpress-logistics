@@ -8,23 +8,23 @@ describe("[REGULAR] Test login OExpress", () => {
     });
 
     it("[FPC001] - Access regular account forgot password page", () => {
-        cy.get('.mt-0').should('contain', 'Reset Password')
+        cy.get('.mt-0').should('contain', 'Reset Password');
     })
 
     it("[FPC002] - With invalid email", () => {
-        cy.get('input[name="email"]').type('corp1yopmail.com')
-        cy.get('span[role="alert"]'). should('contain', 'email harus email valid.')
+        cy.get('input[name="email"]').type('corp1yopmail.com');
+        cy.get('span[role="alert"]'). should('contain', 'email harus email valid.');
     })
 
     it("[FPC003] - With unregistered email", () => {
-        cy.get('input[name="email"]').type('test11@yopmail.com')
-        cy.get('button[type="submit"]').click()
-        cy.get('.alert').should('contain', 'Pengguna tidak ditemukan')
+        cy.get('input[name="email"]').type('test11@yopmail.com');
+        cy.get('button[type="submit"]').click();
+        cy.get('.alert').should('contain', 'Pengguna tidak ditemukan');
     })
 
     it("[FPC004] - With registered and valid email", () => {
-        cy.get('input[name="email"]').type('corp1@yopmail.com')
-        cy.get('button[type="submit"]').click()
-        cy.get('.alert-success').should('contain', 'Tolong cek email Anda!')
+        cy.get('input[name="email"]').type('corp1@yopmail.com');
+        cy.get('button[type="submit"]').click();
+        cy.get('.alert-success').should('contain', 'Tolong cek email Anda!');
     })
 })

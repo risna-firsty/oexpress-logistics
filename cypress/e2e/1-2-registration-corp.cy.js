@@ -31,9 +31,9 @@ describe("Test Registration Corporate", () => {
         cy.get('input[name="phone"]').type('0812345678');
     })
 
-    it.only("[RC004] - Register with valid data", () => {
+    it("[RC004] - Register with valid data", () => {
         const randomName = "Corporate Automate "+Math.floor(Math.random() * 100) + 1;
-        const randomEmail = "corptest"+Math.floor(Math.random() * 100) + 1+"@yopmail.com";
+        const randomEmail = "corptest"+Math.floor(Math.random() * 1000) + 1+"@yopmail.com";
         const randomPhone = "081"+Math.floor(Math.random() * 10000000) + 1;
 
         cy.get('input[name="name"]').type(randomName);

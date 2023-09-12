@@ -60,7 +60,6 @@ describe("[CORPORATE] Test login OExpress", () => {
             );
             cy.contains('Simpan').click()
         })
-        
         cy.wait(5000)
         cy.reload()
         cy.get('.bg-warning-lighten').should('not.exist')

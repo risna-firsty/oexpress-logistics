@@ -28,7 +28,6 @@ describe("[REGULAR] Test login OExpress", () => {
         cy.get('button[type="submit"]').click();
         cy.wait(1000);
         cy.get('.alert').should('contain', 'Kombinasi email dan password salah');
-        //cy.get('div[role="alert"]').should('contain', 'Kombinasi email dan password salah')
     })
 
     it("[LR004] - Login with registered & valid email and password", () => {

@@ -34,7 +34,6 @@ describe("[REGULAR] Test login OExpress", () => {
       cy.get('input[name="ponsel"]').type(randomPhone)
       cy.get('.btn-primary').contains('Simpan Perubahan').click()
       cy.get('.notification-content').should('contain', 'Your profile was changed')
-      //cy.get('.vue-notification-template').should('have.class', '.notification-content').and('contain', 'Your profile was changed')
     })
 
     it("[OR003] - Cancel to add new bank account", () => {
@@ -80,7 +79,7 @@ describe("[REGULAR] Test login OExpress", () => {
       cy.get('button[type="submit"]').contains('Simpan').click()
       cy.get(6000)
 
-      //assert that the data are already changed compare to initial condition
+      //assert that the data are already changed, if we compare to initial condition
       cy.get('input[name="store_name"]').should('not.have.value', 'Toko Regular 01')
       cy.get('input[name="name"]').should('not.have.value', 'Owner Regular 01')
       cy.get('input[name="pickup_address"]').should('not.have.value', 'Alamat Regular 01')

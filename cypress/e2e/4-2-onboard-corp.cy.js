@@ -59,8 +59,6 @@ describe("[CORPORATE] Test login OExpress", () => {
               { subjectType: 'drag-n-drop' }
             );
             cy.contains('Simpan').click()
-            //cy.get('button[type="submit"]').eq(2).click()
-            // cy.get('button[type="submit"]').last().click();
         })
         
         cy.wait(5000)
